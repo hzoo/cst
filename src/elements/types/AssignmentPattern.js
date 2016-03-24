@@ -26,7 +26,5 @@ export default class AssignmentPattern extends Node {
         return this._right;
     }
 
-    isPattern() {
-        return true;
-    }
+    isPattern: boolean = true;
 }

@@ -36,11 +36,6 @@ export default class ObjectPattern extends Node {
         return this._properties.concat();
     }
 
-    get isPattern() {
-        return true;
-    }
-
-    get isAssignable() {
-        return true;
-    }
+    isPattern: boolean = true;
+    isAssignable: boolean = true;
 }

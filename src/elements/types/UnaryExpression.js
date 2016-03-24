@@ -44,7 +44,5 @@ export default class UnaryExpression extends Expression {
         return this._operator;
     }
 
-    get prefix() {
-        return true;
-    }
+    prefix: boolean = true;
 }

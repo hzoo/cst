@@ -61,12 +61,6 @@ export default class ArrowFunctionExpression extends Expression {
         return this._expression;
     }
 
-    get id() {
-        return null;
-    }
-
-    get generator() {
-        return false;
-    }
-
+    id: boolean = null;
+    generator: boolean = false;
 }

@@ -29,7 +29,5 @@ export default class RestElement extends Node {
         return this._argument;
     }
 
-    isPattern() {
-        return true;
-    }
+    isPattern: boolean = true;
 }

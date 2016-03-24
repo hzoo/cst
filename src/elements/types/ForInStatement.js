@@ -51,7 +51,5 @@ export default class ForInStatement extends Statement {
         return this._body;
     }
 
-    get each() {
-        return false;
-    }
+    each: boolean = false;
 }

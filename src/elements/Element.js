@@ -27,6 +27,17 @@ export type Range = [
  * @abstract
  */
 export default class Element {
+    isWhitespace: boolean = false;
+    isCode: boolean = true;
+    isToken: boolean = false;
+    isComment: boolean = false;
+    isNode: boolean = false;
+    isExpression: boolean = false;
+    isStatement: boolean = false;
+    isPattern: boolean = false;
+    isAssignable: boolean = false;
+    isFragment: boolean = false;
+
     /**
      * @param {String} type
      * @param {Element[]} children
@@ -74,102 +85,12 @@ export default class Element {
     }
 
     /**
-     * True if Element is a Token.
-     *
-     * @returns {Boolean}
-     */
-    get isToken(): boolean {
-        return false;
-    }
-
-    /**
-     * True if Element is a whitespace Token.
-     *
-     * @returns {Boolean}
-     */
-    get isWhitespace(): boolean {
-        return false;
-    }
-
-    /**
-     * True if Element is a code Token.
-     *
-     * @returns {Boolean}
-     */
-    get isCode(): boolean {
-        return true;
-    }
-
-    /**
-     * True if Element is a comment Token.
-     *
-     * @returns {Boolean}
-     */
-    get isComment(): boolean {
-        return false;
-    }
-
-    /**
      * True if Element is Comment or Whitespace.
      *
      * @returns {Boolean}
      */
     get isNonCodeToken(): boolean {
         return this.isComment || this.isWhitespace;
-    }
-
-    /**
-     * True if Element is a Node.
-     *
-     * @returns {Boolean}
-     */
-    get isNode(): boolean {
-        return false;
-    }
-
-    /**
-     * True if Element is a Node which can be used as Expression.
-     *
-     * @returns {Boolean}
-     */
-    get isExpression(): boolean {
-        return false;
-    }
-
-    /**
-     * True if Element is a Node which can be used as Statement.
-     *
-     * @returns {Boolean}
-     */
-    get isStatement(): boolean {
-        return false;
-    }
-
-    /**
-     * True if Element is a Node which can be used as Pattern.
-     *
-     * @returns {Boolean}
-     */
-    get isPattern(): boolean {
-        return false;
-    }
-
-    /**
-     * True if Element is a Node which can be used as left part of Assignment.
-     *
-     * @returns {Boolean}
-     */
-    get isAssignable(): boolean {
-        return false;
-    }
-
-    /**
-     * True if Element is a Fragment.
-     *
-     * @returns {Boolean}
-     */
-    get isFragment(): boolean {
-        return false;
     }
 
     // ==== Traversing =================================================================================================

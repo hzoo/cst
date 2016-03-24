@@ -14,7 +14,5 @@ export default class ModuleSpecifier extends Node {
 
     _local: Object;
 
-    get isModuleSpecifier(): boolean {
-        return true;
-    }
+    isModuleSpecifier: boolean = true;
 }

@@ -10,7 +10,5 @@ import Node from './Node';
  * @abstract
  */
 export default class Expression extends Node {
-    get isExpression(): boolean {
-        return true;
-    }
+  isExpression: boolean = true;
 }

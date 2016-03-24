@@ -58,9 +58,7 @@ export default class FunctionDeclaration extends Statement {
         return this._body;
     }
 
-    get expression() {
-        return false;
-    }
+    expression: boolean = false;
 
     get id() {
         return this._id;

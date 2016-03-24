@@ -45,7 +45,5 @@ export default class MemberExpression extends Expression {
         return this._computed;
     }
 
-    get isAssignable() {
-        return true;
-    }
+    isAssignable: boolean = true;
 }

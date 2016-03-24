@@ -10,7 +10,5 @@ import Node from './Node';
  * @abstract
  */
 export default class Statement extends Node {
-    get isStatement(): boolean {
-        return true;
-    }
+    isStatement: boolean = true;
 }

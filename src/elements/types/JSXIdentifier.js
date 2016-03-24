@@ -12,13 +12,8 @@ export default class JSXIdentifier extends Expression {
         this._name = name;
     }
 
-    get isPattern() {
-        return true;
-    }
-
-    get isAssignable() {
-        return true;
-    }
+    isPattern: boolean = true;
+    isAssignable: boolean = true;
 
     get name() {
         return this._name;

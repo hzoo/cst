@@ -8,7 +8,5 @@ import Statement from './Statement';
  * @name ModuleDeclaration
  */
 export default class ModuleDeclaration extends Statement {
-    get isModuleDeclaration(): boolean {
-        return true;
-    }
+    isModuleDeclaration: boolean = true;
 }

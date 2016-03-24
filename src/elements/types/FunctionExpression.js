@@ -80,9 +80,7 @@ export default class FunctionExpression extends Expression {
         return this._body;
     }
 
-    get expression() {
-        return false;
-    }
+    expression: boolean = false;
 
     get id() {
         return this._id;

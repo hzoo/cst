@@ -23,6 +23,16 @@ export default class Token extends Element {
         return new Token(token.type, token.value, token.sourceCode);
     }
 
+    value: string;
+    isComment: boolean;
+    isWhitespace: boolean;
+    isCode: boolean;
+    isToken: boolean = true;
+
+    _sourceCode: string;
+    _sourceCodeLength: number;
+    _sourceCodeLines: Array<string>;
+
     /**
      * @param {String} type
      * @param {String} value
@@ -57,22 +67,14 @@ export default class Token extends Element {
                 isCode = false;
                 break;
         }
-        this._value = value;
+        this.value = value;
         this._sourceCode = _sourceCode;
         this._sourceCodeLength = _sourceCode.length;
         this._sourceCodeLines = getLines(_sourceCode);
-        this._isComment = isComment;
-        this._isWhitespace = isWhitespace;
-        this._isCode = isCode;
+        this.isComment = isComment;
+        this.isWhitespace = isWhitespace;
+        this.isCode = isCode;
     }
-
-    _value: string;
-    _sourceCode: string;
-    _sourceCodeLength: number;
-    _sourceCodeLines: Array<string>;
-    _isComment: boolean;
-    _isWhitespace: boolean;
-    _isCode: boolean;
 
     get firstToken(): ?Token | Element {
         return this;
@@ -80,26 +82,6 @@ export default class Token extends Element {
 
     get lastToken(): ?Token | Element {
         return this;
-    }
-
-    get isToken(): boolean {
-        return true;
-    }
-
-    get isComment(): boolean {
-        return this._isComment;
-    }
-
-    get isCode(): boolean {
-        return this._isCode;
-    }
-
-    get isWhitespace(): boolean {
-        return this._isWhitespace;
-    }
-
-    get value(): ?string {
-        return this._value;
     }
 
     get sourceCode(): string {
@@ -132,7 +114,7 @@ export default class Token extends Element {
      * @returns {Element}
      */
     cloneElement(): Token {
-        return new Token(this._type, this._value, this._sourceCode);
+        return new Token(this._type, this.value, this._sourceCode);
     }
 }
 
